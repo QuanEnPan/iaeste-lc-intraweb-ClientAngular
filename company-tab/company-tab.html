@@ -1,0 +1,30 @@
+<h3>Company {{company.id}}: {{company.title}}</h3>
+<section class="tab" ng-controller="CompaniesController as controller">
+
+    <!--
+    <ul class="nav nav-tabs">
+        <li ng-class="{active: tab.isSet(1)}">
+            <a href ng-click="tab.setTab(1)">company info</a></li>
+		  <li ng-class="{active: tab.isSet(2)}">
+            <a href ng-click="tab.setTab(2)">Poster of company</a></li>
+    </ul>
+    -->
+
+    <div class="tab-content">
+        <blockquote>Name: {{company.name}}</blockquote>
+		<blockquote>Headquarters: {{company.headquarters}}</blockquote>
+		<blockquote>Work Place: {{company.workPlace}}</blockquote>
+		<blockquote>Foundation Date: {{company.foundationDate}}</blockquote>
+		
+		<button ng-show="company.id!=null" class="btn btn-lg btn-primary" ng-click="controller.deleteCompany(company.id)">
+                <span ng-show="!controller.deleteloading()">Delete company</span>
+				<span ng-show="controller.deleteloading() "><span class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span> Loading...</span>
+               
+        </button>
+    <!--
+    </div>
+	<div class="tab-content" ng-show="tab.isSet(2)">
+        <blockquote><img ng-src = {{company.poster}}/></blockquote>
+    </div>
+    -->
+</section>
